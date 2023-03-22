@@ -7,14 +7,4 @@
             
         }
     }
-
-   
-    public class T
-    {
-        public void Testing()
-        {
-
-        }
-    }
-    
 }
