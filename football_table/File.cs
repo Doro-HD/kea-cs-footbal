@@ -7,6 +7,7 @@ namespace Football.File
             var lines = new List<List<string>>();
             using (var reader = new StreamReader(path))
             {
+                reader.ReadLine();
                 while (!reader.EndOfStream)
                 {
                     var line = reader.ReadLine();
