@@ -2,18 +2,23 @@ namespace Football.File
 {
     public class FileAssistant
     {
-        public List<List<string>> Read(string path)
+        public List<List<string>> Read(string dirPath)
         {
             var lines = new List<List<string>>();
-            using (var reader = new StreamReader(path))
+            string[] filePaths = Directory.GetFiles(dirPath, "*.csv", SearchOption.AllDirectories);
+
+            foreach (string path in filePaths)
             {
-                reader.ReadLine();
-                while (!reader.EndOfStream)
+                using (var reader = new StreamReader(path))
                 {
-                    var line = reader.ReadLine();
-                    var columns = line.Split(',');
-                    var columnList = new List<string>(columns);
-                    lines.Add(columnList);
+                    reader.ReadLine();
+                    while (!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        var columns = line.Split(',');
+                        var columnList = new List<string>(columns);
+                        lines.Add(columnList);
+                    }
                 }
             }
             return lines;
@@ -21,7 +26,6 @@ namespace Football.File
 
         public void format(List<List<string>> lines)
         {
-
             foreach (var line in lines)
             {
                 foreach (var column in line)
@@ -30,6 +34,7 @@ namespace Football.File
                 }
                 Console.WriteLine();
             }
+            
         }
     }
 }
