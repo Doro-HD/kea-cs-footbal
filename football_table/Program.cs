@@ -7,7 +7,7 @@ namespace Football
         public static void Main(String[] args)
         {
             FileAssistant fileAssistant = new FileAssistant();
-            List<List<string>> list = fileAssistant.Read("../../KEA-CS-FOOTBALL/csv files/");
+            List<List<string>> list = fileAssistant.Read("../../KEA-CS-FOOTBALL/csv files/Rounds");
 
             fileAssistant.format(list);
             
