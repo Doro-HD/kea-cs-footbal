@@ -1,4 +1,4 @@
-namespace Football.League
+namespace Football
 {
     public class League
     {

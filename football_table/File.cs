@@ -24,6 +24,7 @@ namespace Football.File
             return lines;
         }
 
+
         public void format(List<List<string>> lines)
         {
             foreach (var line in lines)
