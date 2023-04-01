@@ -49,8 +49,8 @@ namespace Football
                     }
                 }
 
-                match.team1.goalsScored += match.team2Score;
-                match.team2.goalsScored += match.team1Score;
+                match.team1.goalsScored += match.team1Score;
+                match.team2.goalsScored += match.team2Score;
                 match.team1.goalsLost += match.team2Score;
                 match.team2.goalsLost += match.team1Score;
                 match.team1.numberOfGamesPlayed++;
