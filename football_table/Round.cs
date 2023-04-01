@@ -19,9 +19,7 @@ namespace Football
         {
             foreach (Match match in this.matches)
             {
-                
-            
-                if (match.GetTeam1Score() > match.GetTeam2Score())
+                if (match.team2Score > match.team1Score)
                 {
                      try
                     {
@@ -31,7 +29,7 @@ namespace Football
                         Console.WriteLine("No no, no team here. " + e);
                     }
                 }
-                else if (match.GetTeam1Score() < match.GetTeam2Score())
+                else if (match.team1Score < match.team2Score)
                 {
                     try
                     {
@@ -57,7 +55,6 @@ namespace Football
                 match.team2.goalsLost += match.GetTeam1Score();
                 match.team1.numberOfGamesPlayed++;
                 match.team2.numberOfGamesPlayed++;
-
             }
         }
 

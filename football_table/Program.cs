@@ -5,8 +5,8 @@ namespace Football
     public class Program
     {
         static FileAssistant fileAssistant = new FileAssistant();
-        static List<List<string>> matchesCSV = fileAssistant.Read("../../KEA-CS-FOOTBALL/csv files/Rounds");
-        static List<List<string>> teamsCSV = fileAssistant.Read("../../KEA-CS-FOOTBALL/csv files/teams");
+        static List<List<string>> matchesCSV = fileAssistant.Read("../csv files/Rounds");
+        static List<List<string>> teamsCSV = fileAssistant.Read("../csv files/teams");
         static List<Team> teamList = new List<Team>();
         static List<Match> matchList = new List<Match>();
         static List<Round> roundList = new List<Round>();
@@ -45,11 +45,11 @@ namespace Football
         public static void Table()
         {
             var result = teamList
-                .OrderBy( team => team.points )
-                .ThenBy( team => team.goalDifference )
-                .ThenBy( team => team.goalsScored )
-                .ThenBy( team => team.goalsLost )
-                .ThenBy( team => team.name );
+                .OrderByDescending(team => team.points)
+                .ThenBy(team => team.goalDifference)
+                .ThenBy(team => team.goalsScored)
+                .ThenBy(team => team.goalsLost)
+                .ThenBy(team => team.name);
 
             Console.ForegroundColor = ConsoleColor.Black;
 
@@ -82,6 +82,7 @@ namespace Football
                 + $"{t.numberOfGamesDrawn,-2} | {t.numberOfGamesLost,-2} | {t.points, -2}");
 
                 i++;
+                Console.ResetColor();
             }
         }
     }
