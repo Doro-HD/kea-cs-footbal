@@ -56,9 +56,9 @@ namespace Football
             Console.WriteLine("Po. Club  Name                        Rank  GP   W   D    L    P ");
             Console.WriteLine("-----------------------------------------------------------------");
 
-            for (int i = 0; i < result.Count(); i++)
+            int i = 1;
+            foreach (Team t in result)
             {
-                var t = result.GetEnumerator(i);
                 switch (t.specialRanking)
                 {
                     case "R":
@@ -78,8 +78,10 @@ namespace Football
                         break;
                 }
 
-                Console.WriteLine($"{i + 1, -2} | {t.abbr,-3} | {t.name,-25} | {t.specialRanking,-2} | {t.numberOfGamesPlayed,-2} | {t.numberOfGamesWon,-2} |"
+                Console.WriteLine($"{i, -2} | {t.abbr,-3} | {t.name,-25} | {t.specialRanking,-2} | {t.numberOfGamesPlayed,-2} | {t.numberOfGamesWon,-2} |"
                 + $"{t.numberOfGamesDrawn,-2} | {t.numberOfGamesLost,-2} | {t.points, -2}");
+
+                i++;
             }
         }
     }
