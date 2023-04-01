@@ -14,7 +14,7 @@ namespace Football
         public int numberOfGamesDrawn {get; set;}
         public int numberOfGamesLost {get; set;}
 
-        public int goalDifference => goalsScored - goalsLost; 
+        public int goalDifference => goalsLost - goalsScored; 
 
         public Team (List<string> teams)
         {
