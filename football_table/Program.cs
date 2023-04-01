@@ -38,6 +38,11 @@ namespace Football
                 roundList.Add(round);
             }
 
+            foreach (Team team in teamList)
+            {
+                team.winStreak(roundList.GetRange(26, 6));
+            }
+
             Table();
             
         }
@@ -53,8 +58,8 @@ namespace Football
 
             Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Po. Club  Name                        Rank  MP   W    D    L    GF   GA   GD   P  ");
-            Console.WriteLine("----------------------------------------------------------------------------------");
+            Console.WriteLine("Po. Club  Name                        Rank  MP   W    D    L    GF   GA   GD   P    Streak");
+            Console.WriteLine("-------------------------------------------------------------------------------------------");
 
             int i = 1;
             foreach (Team t in result)
@@ -79,7 +84,7 @@ namespace Football
                 }
 
                 Console.WriteLine($"{i, -2} | {t.abbr,-3} | {t.name,-25} | {t.specialRanking,-2} | {t.numberOfGamesPlayed,-2} | {t.numberOfGamesWon,-2} |"
-                + $" {t.numberOfGamesDrawn,-2} | {t.numberOfGamesLost,-2} | {t.goalsScored,-2} | {t.goalsLost,-2} | {t.goalDifference,-3} | {t.points, -2}");
+                + $" {t.numberOfGamesDrawn,-2} | {t.numberOfGamesLost,-2} | {t.goalsScored,-2} | {t.goalsLost,-2} | {t.goalDifference,-3} | {t.points, -2} | {t.streak}");
 
                 i++;
                 Console.ResetColor();
