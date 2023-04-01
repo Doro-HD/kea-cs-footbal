@@ -49,10 +49,10 @@ namespace Football
                     }
                 }
 
-                match.team1.goalsScored += match.GetTeam1Score();
-                match.team2.goalsScored += match.GetTeam2Score();
-                match.team1.goalsLost += match.GetTeam2Score();
-                match.team2.goalsLost += match.GetTeam1Score();
+                match.team1.goalsScored += match.team2Score;
+                match.team2.goalsScored += match.team1Score;
+                match.team1.goalsLost += match.team2Score;
+                match.team2.goalsLost += match.team1Score;
                 match.team1.numberOfGamesPlayed++;
                 match.team2.numberOfGamesPlayed++;
             }
