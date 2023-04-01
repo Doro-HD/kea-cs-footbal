@@ -42,6 +42,32 @@ namespace Football
             this.numberOfGamesDrawn += 1;
         }
 
+        public String winStreak(List<Round> rounds){
+
+            for (int i = 0; i < rounds.Count; i++){
+                var m = rounds[i].matches;
+                foreach (Match match in m){
+                    var homeTeam = match.team1.abbr;
+                    var otherTeam = match.team2.abbr;
+
+                    if (homeTeam == this.abbr) {
+                        
+                    }
+                }
+            }
+
+        }
+
+        public void getWin(int thisTeamScore, int otherTeamScore){
+
+            
+            if(thisTeamScore < otherTeamScore){
+                
+            }
+
+            
+
+        }
 
         
     
