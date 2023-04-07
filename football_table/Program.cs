@@ -1,4 +1,5 @@
 ﻿using Football.File;
+using Football.Ranking; 
 
 namespace Football
 {
@@ -66,16 +67,16 @@ namespace Football
             {
                 switch (t.specialRanking)
                 {
-                    case "R":
+                    case Ranking.SpecialRanking.R:
                         Console.ForegroundColor = ConsoleColor.DarkCyan;
                         break;
-                    case "C":
+                    case Ranking.SpecialRanking.C:
                         Console.ForegroundColor = ConsoleColor.DarkRed;
                         break;
-                    case "P":
+                    case Ranking.SpecialRanking.P:
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
                         break;
-                    case "W":
+                    case Ranking.SpecialRanking.W:
                         Console.ForegroundColor = ConsoleColor.DarkGreen;
                         break;
                     default:
