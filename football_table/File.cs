@@ -21,6 +21,7 @@ namespace Football.File
                     }
                 }
             }
+            
             return lines;
         }
 

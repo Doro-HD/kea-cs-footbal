@@ -21,7 +21,7 @@ namespace Football
             {
                 if (match.team2Score > match.team1Score)
                 {
-                     try
+                    try
                     {
                         match.team1.TeamWon();
                         match.team2.numberOfGamesLost += 1;
