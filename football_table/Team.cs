@@ -1,12 +1,13 @@
+using Football.Ranking;
+
 namespace Football
 {
     public class Team
     {
         public string abbr {get; set;}
         public string name {get; set;}
-        public string specialRanking {get; set;}
+        public Ranking.SpecialRanking specialRanking {get; set;}
         public int points {get; set;}
-
         public int goalsScored {get; set;}
         public int goalsLost {get; set;}
         public int numberOfGamesPlayed {get; set;}
@@ -21,7 +22,7 @@ namespace Football
         {
             this.abbr = teams[0];
             this.name = teams[1];
-            this.specialRanking = teams[2];
+            this.specialRanking = (Ranking.SpecialRanking) Enum.Parse(typeof(Ranking.SpecialRanking), teams[2]);
             this.points = 0;
             this.goalsScored = 0;
             this.goalsLost = 0;
